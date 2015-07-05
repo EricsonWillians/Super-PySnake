@@ -61,7 +61,7 @@ class App(Serializable, pyglet.window.Window):
 					"FULLSCREEN": True,
 					"LOCKED_MOUSE": True,
 					"DEFAULT_MAP_FILE": "default_map.txt",
-					"TEXTURES": {"BACKGROUND": "GFX\\background.png", "SNAKE": "GFX\\snake.png", "FOOD": "GFX\\food.png", "BRICK": "GFX\\brick.png"}}
+					"TEXTURES": {"BACKGROUND": "GFX//background.png", "SNAKE": "GFX//snake.png", "FOOD": "GFX//food.png", "BRICK": "GFX//brick.png"}}
 		self.write("config.txt")
 		pyglet.window.Window.__init__(self, self.data["SCREEN_WIDTH"], self.data["SCREEN_HEIGHT"], fullscreen=self.data["FULLSCREEN"])
 		if self.data["LOCKED_MOUSE"]:
