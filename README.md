@@ -6,7 +6,7 @@
 # Instructions:
 
 ### Windows
-* Download "Super PySnake.rar" and extract it.
+* Download "[Super PySnake.rar](https://sourceforge.net/projects/superpysnake/)" and extract it.
 * Execute "run.exe"
 
 ### Linux
