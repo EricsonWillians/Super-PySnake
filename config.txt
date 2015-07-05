@@ -1,0 +1,1 @@
+{"TEXTURES": {"BRICK": "GFX\\brick.png", "BACKGROUND": "GFX\\background.png", "FOOD": "GFX\\food.png", "SNAKE": "GFX\\snake.png"}, "SQUARE_SIZE": 32, "DEFAULT_MAP_FILE": "default_map.txt", "GAME_SPEED": 0.1, "FULLSCREEN": true, "SCREEN_WIDTH": 1024, "SCREEN_HEIGHT": 768, "LOCKED_MOUSE": true}
