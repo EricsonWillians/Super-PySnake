@@ -2,7 +2,6 @@
  An open-source 2D snake game made with Pyglet and Python 3.4.
 
 ![Super PySnake](http://i.imgur.com/B4AZBM5.png)
-Format: ![Super PySnake](url)
 
 # Instructions:
 
