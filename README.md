@@ -10,6 +10,6 @@
 * Execute "run.exe"
 
 ### Linux
-* Download Python 3.4.
-* Use pip to install pyglet.
-* Run "run.py" with python.
+* Download Python 3+.
+* run 'pip install -r ./requirements.txt'
+* Run 'run.py' :)
