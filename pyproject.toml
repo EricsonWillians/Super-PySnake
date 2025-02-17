@@ -1,0 +1,36 @@
+[tool.poetry]
+name = "super-pysnake"
+version = "0.1.0"
+description = "A classic Snake game implementation using Pyglet"
+authors = ["Ericson Willians <ericsonwrp@gmail.com>"]
+readme = "README.md"
+packages = [{ include = "game" }]
+license = "GPL-2.0-or-later"
+repository = "https://github.com/ericsonwillians/Super-PySnake"
+keywords = ["game", "snake", "pyglet"]
+
+[tool.poetry.dependencies]
+python = ">=3.8,<4.0"
+pyglet = "^2.0.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.0"
+black = "^23.7.0"
+isort = "^5.12.0"
+pylint = "^2.17.5"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+super-pysnake = "game.main:main"
+
+[tool.black]
+line-length = 88
+target-version = ["py38"]
+include = "\\.pyi?$"
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3

@@ -1,0 +1,21 @@
+{
+    "screen": {
+        "width": 1024,
+        "height": 768,
+        "fullscreen": false
+    },
+    "game": {
+        "square_size": 32,
+        "speed": 0.1,
+        "locked_mouse": true
+    },
+    "assets": {
+        "map_file": "assets/maps/default.json",
+        "textures": {
+            "background": "assets/gfx/background.png",
+            "snake": "assets/gfx/snake.png",
+            "food": "assets/gfx/food.png",
+            "brick": "assets/gfx/brick.png"
+        }
+    }
+}
