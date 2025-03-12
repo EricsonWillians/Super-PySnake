@@ -16,7 +16,7 @@ from game.types import (
     Size,
     DEFAULT_SNAKE_POSITION,
 )
-
+from pyscored.adapters.game_frameworks import GameFrameworkAdapter
 
 class Snake:
     """The player-controlled snake entity.
@@ -31,7 +31,7 @@ class Snake:
         dungeon: Reference to the game dungeon for collision detection.
     """
 
-    def __init__(self, dungeon: Dungeon) -> None:
+    def __init__(self, dungeon: Dungeon, game_adapter: GameFrameworkAdapter) -> None:
         """Initialize the snake with a single segment.
 
         Args:
@@ -40,6 +40,7 @@ class Snake:
         self.direction = Direction.NORTH
         self.speed = window.config["GAME_SPEED"]
         self.dungeon = dungeon
+        self.game_adapter = game_adapter
 
         # Create the initial body segment (the head).
         self._create_default_body()
@@ -116,6 +117,7 @@ class Snake:
         """
         self._create_default_body()
         food.reset_position([segment.position for segment in self.body])
+        self.game_adapter.update_player_score("player1", points=-self.current_score)
 
     def move(self, dt: float, food: Food) -> None:
         """Update the snake's position and handle collisions.
@@ -138,8 +140,8 @@ class Snake:
         if self._check_self_collision(next_pos) or self._check_wall_collision(next_pos):
             self.reset(food)
             return
-
-        # Check if the food is about to be eaten.
+        
+        # Check if the food is about to be eaten
         food_eaten = food.is_eaten(next_pos)
 
         # Create and insert the new head segment.
@@ -155,11 +157,12 @@ class Snake:
         self.body.insert(0, new_head)
 
         if food_eaten:
-            # When food is eaten, reset its position.
+            # Update player score through adapter
+            self.game_adapter.update_player_score("player1", points=10)
+            self.current_score = self.game_adapter.get_player_score("player1")
+            print(f"Current score: {self.current_score}")
             food.reset_position([segment.position for segment in self.body])
-            # Do not remove the tail; this grows the snake.
         else:
-            # Normal movement: remove the tail segment.
             self.body.pop()
 
 

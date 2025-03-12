@@ -267,13 +267,13 @@ testing = ["pytest", "pytest-benchmark"]
 
 [[package]]
 name = "pyglet"
-version = "2.1.2"
+version = "2.1.3"
 description = "pyglet is a cross-platform games and multimedia package."
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "pyglet-2.1.2-py3-none-any.whl", hash = "sha256:2819fa9d66ead4b1682d1b7fa7170692d46277e1a6661b329bdba3e65288c036"},
-    {file = "pyglet-2.1.2.tar.gz", hash = "sha256:6fc1fed55eb6dc80c87a7a45ac62c2a61be08cd31114b27abef8619959be7845"},
+    {file = "pyglet-2.1.3-py3-none-any.whl", hash = "sha256:5a7eaf35869ecf7451fb49cc064c4c0e9a118eaa5e771667c607125b13f85e33"},
+    {file = "pyglet-2.1.3.tar.gz", hash = "sha256:9a2c3c84228402ea7103443ac8a52060cc1c91419951ec1105845ce30fed2ce8"},
 ]
 
 [[package]]
@@ -304,6 +304,17 @@ typing-extensions = {version = ">=3.10.0", markers = "python_version < \"3.10\""
 [package.extras]
 spelling = ["pyenchant (>=3.2,<4.0)"]
 testutils = ["gitpython (>3)"]
+
+[[package]]
+name = "pyscored"
+version = "0.1.1"
+description = "Universal, Plug-in-Play Scoring System"
+optional = false
+python-versions = "<4.0,>=3.8"
+files = [
+    {file = "pyscored-0.1.1-py3-none-any.whl", hash = "sha256:faeac5f06ad17ae14ed3ae9e20224c17f931c86cf96033a9cf2101f37bfc1d44"},
+    {file = "pyscored-0.1.1.tar.gz", hash = "sha256:f824e193b3133e61851af2a5b5da7c9aa22a089b2a71f7c16869c64728a6f2fa"},
+]
 
 [[package]]
 name = "pytest"
@@ -481,4 +492,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.8,<4.0"
-content-hash = "4f4e0587fd087b9c1a863e22bc540048eef9cc7ab317638e4e45619f06199d48"
+content-hash = "6d3b7748cb52b8c4f0d8092e4aaa8b904fa5bf931ca05103224c04d7dfd02071"
