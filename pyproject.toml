@@ -16,7 +16,7 @@ pyscored = "^0.1.1"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^7.4.0"
-black = "^23.7.0"
+black = "^24.3.0"
 isort = "^5.12.0"
 pylint = "^2.17.5"
 
