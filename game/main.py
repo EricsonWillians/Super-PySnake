@@ -4,14 +4,18 @@ Main entry point for the Super PySnake game.
 import pyglet
 from pyglet.window import key
 
+from pyscored.core.scoring_engine import ScoringEngine
+from pyscored.adapters import GameFrameworkAdapter
+
+
 from game.app import window
 from game.dungeon import Dungeon
 from game.food import Food
 from game.snake import Snake
 from game.square import TexturedSquare
 from game.types import Position, Size
+from game.score_display import ScoreDisplay 
 from utils.serializable import Serializable
-
 
 class MapHandler(Serializable):
     """Handles loading and saving of game maps."""
@@ -76,8 +80,14 @@ class Game:
         self.map_handler = MapHandler()
         self.dungeon = Dungeon(self.map_handler.data)
         
+        # Initialize scoring engine and adapter
+        self.scoring_engine = ScoringEngine()
+        self.game_adapter = GameFrameworkAdapter(self.scoring_engine)
+        self.game_adapter.setup_player(player_id="player1", initial_score=0)
+        self.score_display = ScoreDisplay(self.game_adapter, "player1")
+        
         # Create game objects
-        self.snake = Snake(self.dungeon)
+        self.snake = Snake(self.dungeon, self.game_adapter)
         self.food = Food(self.dungeon)
         
         # Set up input handling
@@ -95,7 +105,8 @@ class Game:
             self.dungeon.draw()
             self.food.draw()
             self.snake.draw()
-            
+            self.score_display.draw()
+            self.score_display.update()
             
         @window.event
         def on_key_press(symbol: int, modifiers: int) -> None:
